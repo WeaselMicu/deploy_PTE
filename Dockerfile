@@ -18,4 +18,4 @@ RUN chown -R rstudio:rstudio /home/rstudio/.cache
 RUN mkdir /root/main
 ENV RSTUDIO_SPARK_HOME /home/rstudio/.cache/spark/spark-2.3.0-bin-hadoop2.7
 COPY spark-defaults.conf $RSTUDIO_SPARK_HOME/conf
-RUN apt-get update && apt-get install -y openssh-server apache2 
+
