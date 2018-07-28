@@ -17,8 +17,5 @@ RUN mv /root/spark/ /home/rstudio/.cache
 RUN chown -R rstudio:rstudio /home/rstudio/.cache
 RUN mkdir /root/main
 ENV RSTUDIO_SPARK_HOME /home/rstudio/.cache/spark/spark-2.3.0-bin-hadoop2.7
-# Install supervisor as several processes need to be run
-RUN apt-get update && apt-get install -y openssh-server apache2 
-RUN mkdir -p /var/lock/apache2 /var/run/apache2 /var/run/sshd 
 COPY spark-defaults.conf $RSTUDIO_SPARK_HOME/conf
 RUN apt-get update && apt-get install -y openssh-server apache2 
